@@ -55,7 +55,7 @@ public class myClueSolver {
         AssistantJack jack;;
         murder = 1;
         weapon = 1;
-        location = 1;
+        location = 1; // changes added set murder, weapon, location to 1 
         Scanner keyboard = new Scanner(System.in);
         Random random = new Random();
 
