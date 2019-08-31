@@ -50,13 +50,12 @@ public class myClueSolver {
      */
     public static void main(String[] args) {
         // DECLARATION + INITIALIZATION
-        int answerSet;
+        int answerSet, solution, murder, location, weapon;
         Theory answer;
-        AssistantJack jack;
-        int solution = 1;
-        int murder = 1;
-        int weapon = 1;
-        int location = 1;
+        AssistantJack jack;;
+        murder = 1;
+        weapon = 1;
+        location = 1;
         Scanner keyboard = new Scanner(System.in);
         Random random = new Random();
 
@@ -70,15 +69,21 @@ public class myClueSolver {
 
 // get them all as one if it's wrong increment
         do {
-
+            solution = jack.checkAnswer(weapon, location, murder);
             if(solution == 1)
             {
-
+                weapon++;
+            } else if (solution == 2)
+            {
+                location++;
+            } else if (solution == 3)
+            {
+                murder++;
             }
 //            weapon = random.nextInt(6) + 1;
 //            location = random.nextInt(10) + 1;
 //            murder = random.nextInt(6) + 1;
-            solution = jack.checkAnswer(weapon, location, murder);
+//            solution = jack.checkAnswer(weapon, location, murder);
         } while (solution != 0);
 
         answer = new Theory(weapon, location, murder);
